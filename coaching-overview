@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reclaim Your Prime</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-bg {
+            background-color: #111827;
+            background-image: radial-gradient(circle at top right, rgba(255, 255, 255, 0.05), transparent 40%);
+        }
+        .section-fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .section-fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .method-step {
+            transition: all 0.3s ease-in-out;
+        }
+        .method-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .testimonial-card {
+            background-color: #1F2937;
+            border: 1px solid #374151;
+        }
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 64px;
+            height: 64px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
+        .play-button:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .play-icon {
+            width: 0;
+            height: 0;
+            border-top: 12px solid transparent;
+            border-bottom: 12px solid transparent;
+            border-left: 20px solid white;
+            margin-left: 4px;
+        }
+    </style>
+    <!-- Chosen Palette: Forged Steel & Embers -->
+    <!-- Application Structure Plan: The application is structured as a narrative sales funnel, guiding the user emotionally from their current pain to the desired solution. The flow is: 1) Hero: A bold, identity-focused headline to hook the user. 2) The Problem: Agitates the user's pain points by contrasting their past self with their present reality. 3) The Solution ("The Community Method"): Introduces the branded solution as a clear, 3-step process, making it feel tangible and unique. 4) Objection Handling: Directly confronts and refutes the primary objection ("no time/energy"). 5) Social Proof: Builds trust using placeholders for video testimonials. 6) The Offer (CTA): A final, urgent call to action to join a waitlist, creating scarcity. This structure is chosen over a simple text layout because it mirrors a proven sales conversation, maximizing persuasive impact and leading the user logically to the conversion point. -->
+    <!-- Visualization & Content Choices: Report Info: "The Community Method" (3 steps). Goal: Organize & Inform. Viz/Presentation: Interactive 3-column card layout using HTML/CSS. Interaction: Subtle hover effects and scroll-triggered fade-in animations to draw attention to each step. Justification: This visualizes the abstract concept of the program, making it easy to understand and remember. It's more engaging than a bulleted list. Library/Method: Vanilla JS for scroll animations, Tailwind for layout. --- Report Info: Testimonials. Goal: Build Trust. Viz/Presentation: Grid of dark-themed cards with a placeholder for a video thumbnail and a prominent play button icon. Interaction: Hover effects on the play button. Justification: This clearly signals video content, which is more powerful for social proof than text. The visual layout breaks up the page and adds credibility. Library/Method: HTML/Tailwind for cards, CSS for the play icon. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+</head>
+<body class="bg-gray-900 text-gray-300 antialiased">
+
+    <!-- Hero Section -->
+    <header class="hero-bg">
+        <div class="max-w-4xl mx-auto px-6 py-24 md:py-32 text-center section-fade-in">
+            <h1 class="text-4xl md:text-6xl font-black text-white tracking-tight leading-tight">The prime of your life isn't over.</h1>
+            <p class="mt-4 text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">It's waiting for you to get back in it.</p>
+        </div>
+    </header>
+
+    <main>
+        <!-- The Problem Section -->
+        <section class="py-16 md:py-24 bg-gray-900 section-fade-in">
+            <div class="max-w-5xl mx-auto px-6">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Remember when you were the guy who could...</h2>
+                    <p class="mt-4 text-lg text-gray-400">Outrun your friends, stay up all night, and still have the energy to crush it the next morning?</p>
+                </div>
+                <div class="mt-12 text-center">
+                    <p class="text-xl font-semibold text-amber-400">That's a lie.</p>
+                    <p class="mt-2 text-lg text-gray-400 max-w-3xl mx-auto">You're not unfit. You're just doing this alone. And you're being sold a lie that a phone app can replace a real community.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Solution Section -->
+        <section class="py-16 md:py-24 bg-gray-800 section-fade-in">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Introducing: The Community Method</h2>
+                    <p class="mt-4 text-lg text-gray-400 max-w-3xl mx-auto">Most online fitness plans fail because they don't solve the real problem: <strong class="text-amber-400">motivation and accountability.</strong> Our program is built on the one thing that does.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <!-- Step 1 -->
+                    <div class="bg-gray-900 p-8 rounded-lg method-step">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-full bg-amber-500 text-gray-900 font-bold text-2xl mx-auto">1</div>
+                        <h3 class="mt-6 text-xl font-bold text-white">Online Blueprint</h3>
+                        <p class="mt-2 text-gray-400">A customized workout and nutrition plan built for your body and your busy schedule. We eliminate the guesswork.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="bg-gray-900 p-8 rounded-lg method-step">
+                         <div class="flex items-center justify-center h-12 w-12 rounded-full bg-amber-500 text-gray-900 font-bold text-2xl mx-auto">2</div>
+                        <h3 class="mt-6 text-xl font-bold text-white">Private Brotherhood</h3>
+                        <p class="mt-2 text-gray-400">24/7 access to our private community. A place where other men just like you share their struggles and celebrate their wins.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="bg-gray-900 p-8 rounded-lg method-step">
+                         <div class="flex items-center justify-center h-12 w-12 rounded-full bg-amber-500 text-gray-900 font-bold text-2xl mx-auto">3</div>
+                        <h3 class="mt-6 text-xl font-bold text-white">Real-World Accountability</h3>
+                        <p class="mt-2 text-gray-400">Monthly in-person events. Hikes, camping, adventure weekends. We don't just work out together; we live life together.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Objection Handling Section -->
+        <section class="py-16 md:py-24 bg-gray-900 section-fade-in">
+            <div class="max-w-3xl mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white">The Most Common Lie You Tell Yourself...</h2>
+                <p class="mt-6 text-2xl md:text-3xl font-semibold text-amber-400 italic">"I don't have the time or energy."</p>
+                <p class="mt-6 text-lg text-gray-300">That's what your old life is telling you. But here's the truth: Your lack of time and energy is a <strong class="text-white">symptom of the problem, not the cause.</strong></p>
+                <p class="mt-4 text-lg text-gray-300">This isn't another thing to add to your schedule. This is the solution that gives you the energy back to dominate your day, your work, and your family life.</p>
+            </div>
+        </section>
+
+        <!-- Social Proof Section -->
+        <section class="py-16 md:py-24 bg-gray-800 section-fade-in">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Don't just take my word for it.</h2>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card rounded-lg overflow-hidden">
+                        <div class="relative aspect-video bg-gray-700">
+                           <div class="play-button"><div class="play-icon"></div></div>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-white font-semibold">"I joined because I was tired of feeling old. Now I feel better than I did in my 20s."</p>
+                            <p class="mt-2 text-gray-400">- Mark S, Father of Two</p>
+                        </div>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card rounded-lg overflow-hidden">
+                        <div class="relative aspect-video bg-gray-700">
+                           <div class="play-button"><div class="play-icon"></div></div>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-white font-semibold">"The camping trip was epic. I've made real friends here, not just workout partners."</p>
+                            <p class="mt-2 text-gray-400">- David L, Entrepreneur</p>
+                        </div>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card rounded-lg overflow-hidden">
+                        <div class="relative aspect-video bg-gray-700">
+                           <div class="play-button"><div class="play-icon"></div></div>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-white font-semibold">"I have a crazy schedule. This is the first program that actually fit into my life."</p>
+                            <p class="mt-2 text-gray-400">- Chris P, Executive</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-16 md:py-24 bg-gray-900 section-fade-in">
+            <div class="max-w-3xl mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Ready to reclaim your life?</h2>
+                <p class="mt-4 text-lg text-gray-400">We only open our doors to new members a few times a year to maintain the quality of our community. This isn't for everyone. It's for the man who is done making excuses and is ready to do the work.</p>
+                <div class="mt-8">
+                    <form class="max-w-md mx-auto">
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <input type="email" placeholder="Enter your email" class="w-full px-4 py-3 rounded-md bg-gray-800 border border-gray-700 text-white focus:ring-2 focus:ring-amber-400 focus:border-amber-400 outline-none" required>
+                            <button type="submit" class="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-gray-900 font-bold py-3 px-8 rounded-md transition-colors duration-300 whitespace-nowrap">Join The Waitlist</button>
+                        </div>
+                    </form>
+                    <p class="mt-4 text-sm text-gray-500">We'll let you know the moment doors open and send exclusive access to our next in-person event.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer class="py-8 bg-gray-900">
+        <div class="max-w-6xl mx-auto px-6 text-center text-gray-500">
+            <p>&copy; 2025 The Community Method. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.section-fade-in');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                rootMargin: '0px',
+                threshold: 0.1
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
